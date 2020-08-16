@@ -1,0 +1,134 @@
+@ACL1400
+^LAYOUT   AP_Under_50k_mtp180000                                              39 D.T,
+!"Ch10_Case3_Veltronics_Master_File_SU19" "Ch10_Case3_Veltronics_Master_File_SU19_on_VENDOR_NO" AT (9,214,177,203,10,10,155,157) VENDOR_NO
+INVOICE_AMOUNT NUMERIC     1   8 2  
+INVOICE_DATE   DATETIME    9  10   PICTURE "YYYY-MM-DD"  
+INVOICE_NO     NUMERIC    28   8 0  
+VENDOR_NO      NUMERIC    36   4 0  
+Mar_Invoices   COMPUTED             
+ *L 1
+ (INVOICE_DATE <= `20190330`) AND (INVOICE_DATE >= `20190301`)
+Discount_Lost  COMPUTED             
+ *N 2 1
+ INVOICE_AMOUNT * Ch10_Case3_Veltronics_Master_File_SU19.DISCOUNT
+Vendor_List_Discrepancies COMPUTED             
+ *L 1
+ VENDOR_NO <> Ch10_Case3_Veltronics_Master_File_SU19.VENDOR_NO
+^LAYOUT   Ch10_Case3_Veltronics_Unpaid_Invoices_SU19                          39 D.T,
+!"Ch10_Case3_Veltronics_Master_File_SU19" "Ch10_Case3_Veltronics_Master_File_SU19_on_VENDOR_NO" AT (9,214,177,203,10,10,155,157) VENDOR_NO
+INVOICE_AMOUNT NUMERIC     1   8 2  
+INVOICE_DATE   DATETIME    9  10   PICTURE "YYYY-MM-DD"  
+INVOICE_NO     NUMERIC    28   8 0  
+VENDOR_NO      NUMERIC    36   4 0  
+Mar_Invoices   COMPUTED             
+ *L 1
+ (INVOICE_DATE <= `20190330`) AND (INVOICE_DATE >= `20190301`)
+Discount_Lost  COMPUTED             
+ *N 2 1
+ INVOICE_AMOUNT * Ch10_Case3_Veltronics_Master_File_SU19.DISCOUNT
+Vendor_List_Discrepancies COMPUTED             
+ *L 1
+ VENDOR_NO <> Ch10_Case3_Veltronics_Master_File_SU19.VENDOR_NO
+^LAYOUT   Ch10_Case3_Veltronics_Master_File_SU19                              84 D.T,
+CITY           ASCII       1  15    
+DISCOUNT       NUMERIC    16   4 2  
+STATE          ASCII      20   2    
+STREET         ASCII      22  26    
+VENDOR         ASCII      48  28    
+VENDOR_NO      NUMERIC    76   4 0  
+ZIP            ASCII      80   5    
+^LOGFILE  ACL_Project2_mtp180000                                                                                                                                                                                                                                               "" "ACL_Project2_mtp180000.LOG"
+[PARENT_FOLDER_ID] 0
+^REPORT   Default_View                                                        Ch10_Case3_Veltronics_Master_File_SU19                            D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+CITY                 WIDTH 14 PICTURE ""
+[LINE] 1
+DISCOUNT             WIDTH 10 PICTURE ""
+[LINE] 1
+STATE                WIDTH 8 PICTURE ""
+[LINE] 1
+STREET               WIDTH 20 PICTURE ""
+[LINE] 1
+VENDOR               WIDTH 20 PICTURE ""
+[LINE] 1
+VENDOR_NO            WIDTH 12 PICTURE ""
+[LINE] 1
+ZIP                  WIDTH 6 PICTURE ""
+^FORMAT   Ch10_Case3_Veltronics_Master_File_SU19                              Ch10_Case3_Veltronics_Master_File_SU19                            "" "Veltronics_Master_File_SU19.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+[LASTVIEW] "Default_View"
+[RETRIEVE] 0
+[REFRESH] EXCEL "C:\Users\mtp180000\Documents\ACL Data\Veltronics_Master_File_SU19.fil" FROM "C:\Users\mtp180000\Documents\ACL Data\Source Files_SU19\Veltronics_Master_File_SU19.xlsx" TABLE "Veltronics_Master_File_SU19$" KEEPTITLE ALLFIELDS
+^INDEX    Ch10_Case3_Veltronics_Master_File_SU19_on_VENDOR_NO                 Ch10_Case3_Veltronics_Master_File_SU19                            "" "Ch10_Case3_Veltronics_Master_File_SU19_on_VENDOR_NO.INX" 
+*INDEX ON VENDOR_NO TO "CH10_CASE3_VELTRONICS_MASTER_FILE_SU19_ON_VENDOR_NO"
+^INDEX    ACLQSTMP5                                                           Ch10_Case3_Veltronics_Unpaid_Invoices_SU19                        "" "ACLQSTMP5.INX" 
+*INDEX ON INVOICE_DATE D TO "ACLQSTMP5"
+^FORMAT   AP_Under_50k_mtp180000                                              AP_Under_50k_mtp180000                                            "" "AP_Under_50k_mtp180000.FIL" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+~.07/03/2019   00:46:20 Ch10_Case3_Veltronics_Unpaid_Invoices_SU19 SET FILTER INVOICE_AMOUNT < 50000 AND INVOICE_AMOUNT > 0
+~.07/03/2019   00:46:20 Ch10_Case3_Veltronics_Unpaid_Invoices_SU19 SAMPLE ON VENDOR_NO RANDOM 141 NUMBER 5 POPULATION 136 RECORD TO "AP_Below_50k_mtp180000" OPEN MERSENNE_TWISTER
+~Input : Records:136         Control Total:0                    
+~Output: Records:117         Control Total:0                    
+~.07/03/2019   00:58:14 AP_Below_50k_mtp180000 SAMPLE ON RECORD RANDOM 141 NUMBER 5 RECORD TO "AP_Under_50k_mtp180000" OPEN MERSENNE_TWISTER
+~Input : Records:117         Control Total:0                    
+~Output: Records:5           Control Total:0                    
+[LASTVIEW] "Default_View"
+^REPORT   Default_View                                                        AP_Under_50k_mtp180000                                            D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+INVOICE_DATE         WIDTH 10 PICTURE ""
+[LINE] 1
+INVOICE_NO           WIDTH 8 PICTURE ""
+[LINE] 1
+VENDOR_NO            WIDTH 8 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.VENDOR WIDTH 11 AS "VENDOR" PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.STREET WIDTH 15 AS "STREET" PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.CITY WIDTH 6 AS "CITY" PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.STATE WIDTH 4 AS "STATE" PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.ZIP AS "ZIP" PICTURE ""
+^FORMAT   Ch10_Case3_Veltronics_Unpaid_Invoices_SU19                          Ch10_Case3_Veltronics_Unpaid_Invoices_SU19                        "" "Veltronics_Unpaid_Invoices_SU19.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+[LASTVIEW] "Default_View"
+[RETRIEVE] 0
+[REFRESH] EXCEL "C:\Users\mtp180000\Documents\ACL Data\Veltronics_Unpaid_Invoices_SU19.fil" FROM "C:\Users\mtp180000\Documents\ACL Data\Source Files_SU19\Veltronics_Unpaid_Invoices_SU19.xlsx" TABLE "Veltronics_Unpaid_Invoices_SU19$" KEEPTITLE ALLFIELDS
+[FILTER] INVOICE_AMOUNT <= 0
+[FILTER] INVOICE_AMOUNT <= 840.89
+[FILTER] INVOICE_AMOUNT = 0
+[FILTER] INVOICE_AMOUNT = 840.89
+[FILTER] INVOICE_AMOUNT < 50000 AND INVOICE_AMOUNT > 0
+[FILTER] INVOICE_AMOUNT > 50000
+^REPORT   Default_View                                                        Ch10_Case3_Veltronics_Unpaid_Invoices_SU19                        D.T,
+[SKIP] 0
+[HEADER] "AP Aging Schedule"
+[OUTPUT] "PRINT"
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+INVOICE_DATE         WIDTH 10 PICTURE ""
+[LINE] 1
+INVOICE_NO           WIDTH 8 PICTURE ""
+[LINE] 1
+VENDOR_NO            WIDTH 9 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.VENDOR WIDTH 10 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.VENDOR WIDTH 10 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.STREET WIDTH 9 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.CITY WIDTH 5 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.STATE WIDTH 5 PICTURE ""
+[LINE] 1
+Ch10_Case3_Veltronics_Master_File_SU19.ZIP PICTURE ""
+^OPEN a,F,ACL_Project2_mtp180000;f,F,Ch10_Case3_Veltronics_Unpaid_Invoices_SU19;

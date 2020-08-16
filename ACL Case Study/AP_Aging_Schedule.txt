@@ -1,0 +1,159 @@
+Page ...   1                                         07/03/2019  00:04:25
+Produced with Analytics by: Promotional Account - My Pham (K3V-2K9-U3Q) (US)
+
+                               AP Aging Schedule                               
+
+  INVOICE_AMOUNT    VENDOR_NO VENDOR               INVOICE_DATE 
+
+          840.89         1663 Tri State Exchange   12/20/2018   
+         9923.58         3808 Nova Medical Systems 12/29/2018   
+         8432.79         2433 Rpi Corp             12/06/2018   
+         9595.54         1663 Tri State Exchange   11/13/2018   
+        11163.61         2130 Fairfield Cost Ctr   11/07/2018   
+        10091.84         3411 Springfield Tire Cor 11/24/2018   
+         4567.68         2433 Rpi Corp             11/13/2018   
+          320.88          721 North Atlantic Sales 12/03/2018   
+          432.00         2433 Rpi Corp             11/08/2018   
+           29.31         3411 Springfield Tire Cor 12/26/2018   
+         1837.91          787 Freedland Supply     01/02/2019   
+          212.52          534 Price Cutter Whse    01/24/2019   
+        -4037.04         4913 Finish Line Services 01/15/2019   
+         5837.40          534 Price Cutter Whse    01/12/2019   
+         1218.00         2433 Rpi Corp             01/06/2019   
+         1065.72         1435 Anderson & Greider   01/13/2019   
+         2077.80         2636 Daniels Flying Co    01/10/2019   
+         1405.95         4438 Glass TV & Electroni 01/09/2019   
+         1527.59          134 Chelala Webster      01/26/2019   
+         4470.25         2130 Fairfield Cost Ctr   01/07/2019   
+        16300.28         1837 A & M Electronics    01/17/2019   
+         3984.45         2701 Teffler Aviation     01/29/2019   
+        32857.01          134 Chelala Webster      01/03/2019   
+          323.40          101 St Johns Regional Hl 01/30/2019   
+          986.58          787 Freedland Supply     01/24/2019   
+         1260.14         1663 Tri State Exchange   01/14/2019   
+         1091.44         1922 Ev Hirsch Assoc      01/12/2019   
+          718.63         1475 World Electric       01/04/2019   
+           36.12         1663 Tri State Exchange   01/02/2019   
+           52.53         2701 Teffler Aviation     01/29/2019   
+         1615.35         3411 Springfield Tire Cor 01/28/2019   
+         3338.09         1475 World Electric       01/16/2019   
+          101.57         4438 Glass TV & Electroni 01/11/2019   
+         5551.05         2433 Rpi Corp             01/14/2019   
+         5446.27         2701 Teffler Aviation     02/24/2019   
+        10118.64         1475 World Electric       03/02/2019   
+         4475.74         1837 A & M Electronics    01/31/2019   
+          455.39         2433 Rpi Corp             02/24/2019   
+          432.54         1922 Ev Hirsch Assoc      02/12/2019   
+          939.47          134 Chelala Webster      02/26/2019   
+          113.18          448 Brad Mcevoy Ltd      02/03/2019   
+         2448.00          879 World Of Tables      02/01/2019   
+          575.11         3411 Springfield Tire Cor 02/26/2019   
+           91.45         3136 Alliance Group       02/16/2019   
+          217.53         2701 Teffler Aviation     02/26/2019   
+          588.06           25 Seattle Supply       02/13/2019   
+         1437.48           25 Seattle Supply       02/11/2019   
+         2480.20          134 Chelala Webster      02/07/2019   
+         1236.12          721 North Atlantic Sales 03/02/2019   
+         1421.15         1837 A & M Electronics    02/07/2019   
+           63.50          101 St Johns Regional Hl 02/17/2019   
+          289.16           25 Seattle Supply       03/02/2019   
+Page ...   2                                         07/03/2019  00:04:25
+Produced with Analytics by: Promotional Account - My Pham (K3V-2K9-U3Q) (US)
+
+                               AP Aging Schedule                               
+
+  INVOICE_AMOUNT    VENDOR_NO VENDOR               INVOICE_DATE 
+
+          393.81          787 Freedland Supply     02/08/2019   
+          881.89         4438 Glass TV & Electroni 01/31/2019   
+        25638.37         2130 Fairfield Cost Ctr   02/06/2019   
+         8286.62         4438 Glass TV & Electroni 02/02/2019   
+         1436.23         1475 World Electric       02/16/2019   
+          490.77          721 North Atlantic Sales 02/04/2019   
+         4619.16         1475 World Electric       03/01/2019   
+         2818.38          787 Freedland Supply     02/27/2019   
+          823.45         1435 Anderson & Greider   02/12/2019   
+          948.43          134 Chelala Webster      03/02/2019   
+          654.37          448 Brad Mcevoy Ltd      02/23/2019   
+         3506.24         1475 World Electric       03/01/2019   
+          176.03         1009 Langley Office Prod  03/20/2019   
+        18306.82         1922 Ev Hirsch Assoc      03/27/2019   
+        81744.77           25 Seattle Supply       03/10/2019   
+         9510.48         3411 Springfield Tire Cor 03/08/2019   
+         3584.41         2130 Fairfield Cost Ctr   03/28/2019   
+        41180.10         1475 World Electric       03/18/2019   
+         1331.35         4438 Glass TV & Electroni 03/03/2019   
+         1786.67           25 Seattle Supply       03/19/2019   
+         1761.26         2701 Teffler Aviation     03/07/2019   
+          802.32         1435 Anderson & Greider   03/20/2019   
+          213.86          448 Brad Mcevoy Ltd      02/28/2019   
+         1387.66          721 North Atlantic Sales 03/12/2019   
+           57.13         3136 Alliance Group       03/03/2019   
+           24.71         4438 Glass TV & Electroni 03/06/2019   
+          656.96          101 St Johns Regional Hl 03/20/2019   
+         2297.30         2636 Daniels Flying Co    03/06/2019   
+         1557.55         2248 Mountain Imaging     03/18/2019   
+          711.90         2576 Hilberts Inc.        03/03/2019   
+          550.79          559 Allied TV & Radio Co 03/09/2019   
+          676.22         3928 Beach & Hoover Refin 03/07/2019   
+         1302.81         2230 Jamour Supply        03/12/2019   
+          509.24         2576 Hilberts Inc.        03/22/2019   
+         1278.57         3373 Lash Ceramics        03/23/2019   
+          765.30          720 Weis Instr Inc       03/16/2019   
+         1151.90         2248 Mountain Imaging     03/12/2019   
+          222.16          720 Weis Instr Inc       03/12/2019   
+          414.04         2289 National Chemical Co 03/28/2019   
+          209.48         3864 Epco Inc             03/12/2019   
+          203.70         4299 Mirage Steam Service 03/23/2019   
+          340.63         3928 Beach & Hoover Refin 03/23/2019   
+          414.61          559 Allied TV & Radio Co 03/09/2019   
+         1188.03         3864 Epco Inc             03/14/2019   
+         1667.18         4090 Paragon Cardboard Bo 03/26/2019   
+          766.58         3928 Beach & Hoover Refin 03/05/2019   
+         1526.19         1247 Merritt & Co         03/22/2019   
+          988.34         4599 B & G Industries     03/14/2019   
+        17930.48         3440 Lahey Fortune        03/21/2019   
+        -3066.19         1247 Merritt & Co         03/02/2019   
+          624.13         2576 Hilberts Inc.        03/03/2019   
+          957.12          559 Allied TV & Radio Co 03/12/2019   
+Page ...   3                                         07/03/2019  00:04:25
+Produced with Analytics by: Promotional Account - My Pham (K3V-2K9-U3Q) (US)
+
+                               AP Aging Schedule                               
+
+  INVOICE_AMOUNT    VENDOR_NO VENDOR               INVOICE_DATE 
+
+          972.07         3928 Beach & Hoover Refin 03/04/2019   
+         1302.81         2230 Jamour Supply        03/13/2019   
+          497.12         2576 Hilberts Inc.        03/07/2019   
+         1372.70         3373 Lash Ceramics        03/29/2019   
+          609.34          720 Weis Instr Inc       03/10/2019   
+         1189.06         2248 Mountain Imaging     03/21/2019   
+          188.40          720 Weis Instr Inc       03/26/2019   
+          397.61         2289 National Chemical Co 03/02/2019   
+          356.12         3864 Epco Inc             03/24/2019   
+          230.32         4299 Mirage Steam Service 03/24/2019   
+          289.54         3928 Beach & Hoover Refin 03/21/2019   
+          365.68          559 Allied TV & Radio Co 03/06/2019   
+         1400.91         3864 Epco Inc             03/30/2019   
+         2179.15         4090 Paragon Cardboard Bo 03/06/2019   
+          519.57         3928 Beach & Hoover Refin 03/30/2019   
+         2723.46         1247 Merritt & Co         03/22/2019   
+         1286.71         4599 B & G Industries     03/28/2019   
+         4675.55         1837 A & M Electronics    02/28/2019   
+          609.47         2433 Rpi Corp             03/13/2019   
+          323.19         1922 Ev Hirsch Assoc      03/23/2019   
+          836.65          134 Chelala Webster      03/27/2019   
+           85.29          448 Brad Mcevoy Ltd      03/14/2019   
+         2793.60          879 World Of Tables      03/10/2019   
+          534.32         3411 Springfield Tire Cor 03/17/2019   
+           89.90         3136 Alliance Group       03/04/2019   
+          155.94         2701 Teffler Aviation     03/13/2019   
+          738.72           25 Seattle Supply       03/14/2019   
+         1522.54           25 Seattle Supply       03/09/2019   
+         2188.42          134 Chelala Webster      03/08/2019   
+         1569.26          721 North Atlantic Sales 03/25/2019   
+         1044.96         1837 A & M Electronics    03/25/2019   
+           64.01          101 St Johns Regional Hl 03/17/2019   
+
+       453382.55       274433                                   

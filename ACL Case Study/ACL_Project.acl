@@ -1,0 +1,180 @@
+@ACL1400
+^LAYOUT   Ch9_Case4_Employees_Join_mtp180000                                  6 D.T,
+EmpNo          ASCII       1   6    
+^LAYOUT   Emp_Join_mtp180000                                                  36 D.T,
+EmpNo          ASCII       1   6    
+Salary         PRINT       7   6 0  
+WH__           PRINT      13   4 2  
+Bonus__        PRINT      17   4 2  
+Gross_Pay      PRINT      21   8 2  
+Net_Pay        PRINT      29   8 2  
+^LAYOUT   Ch9_Case4_Eastland_Payroll_Trans_mtp180000                          71 D.T,
+!"Ch9_Case4_Eastland_Payroll_Master_mtp180000" "Eastland_Payroll_Master_mtp180000_on_EmpNo" AT (15,251,142,172,10,10,171,203) EmpNo
+EmpNo          ASCII       1   6    
+Check_No       PRINT       7   5 0  
+Pay_Date       DATETIME   12  19   PICTURE "YYYY-MM-DD"  
+Gross_Pay      PRINT      31   8 2  
+WH             PRINT      39   8 2  
+Net_Pay        PRINT      47   8 2  
+S_or_B         ASCII      55   6    
+Dept           PRINT      61   1 0  
+F9             ASCII      62  10    
+Recalc_Net_Pay COMPUTED             
+ *N 2 1
+ Gross_Pay - WH
+Recalc_Sal     COMPUTED             
+ *N 2 1
+ Net_Pay*12*(1+Eastland_Payroll_Master_mtp180000.Bonus__)
+Recalc_Bonuses COMPUTED             
+ *N 2 1
+ Recalc_Sal * Eastland_Payroll_Master_mtp180000.Bonus__
+Recalc_Salaries COMPUTED             
+ *N 2 1
+ Net_Pay * 12*(1+Ch9_Case4_Eastland_Payroll_Master_mtp180000.Bonus__)
+Recalc_Bon     COMPUTED             
+ *N 2 1
+ Net_Pay * 12 * Ch9_Case4_Eastland_Payroll_Master_mtp180000.Bonus__
+^LAYOUT   Ch9_Case4_Eastland_Payroll_Master_mtp180000                         68 D.T,
+EmpNo          ASCII       1   6    
+Last_Name      ASCII       7  15    
+First_Name     ASCII      22  13    
+Salary         PRINT      35   6 0  
+WH__           PRINT      41   4 2  
+Bonus__        PRINT      45   4 2  
+Department     PRINT      49   1 0  
+HireDate       DATETIME   50  19   PICTURE "YYYY-MM-DD"  
+Bonuses        COMPUTED             
+ *N 2 1
+ Bonus__ *  Salary
+Withholdings   COMPUTED             
+ *N 2 1
+ WH__ * Salary
+^REPORT   Default_View                                                        Ch9_Case4_Employees_Join_mtp180000                                D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+EmpNo                WIDTH 8 PICTURE ""
+^FORMAT   Ch9_Case4_Employees_Join_mtp180000                                  Ch9_Case4_Employees_Join_mtp180000                                "" "Employees_Join.FIL" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+~.07/02/2019   00:09:30 Eastland_Payroll_Master_mtp180000 OPEN Eastland_Payroll_Trans_mtp180000 SECONDARY
+~.07/02/2019   00:09:30 Eastland_Payroll_Master_mtp180000 JOIN PKEY EmpNo FIELDS EmpNo SKEY EmpNo TO "Employees_Join" OPEN PRESORT SECSORT
+~Input : Records:200         Control Total:0                    
+~Output: Records:200         Control Total:0                    
+[LASTVIEW] "Default_View"
+^INDEX    ACLQSTMP15                                                          Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "ACLQSTMP15.INX" 
+*INDEX ON HIREDATE D TO "ACLQSTMP15"
+^INDEX    ACLQSTMP21                                                          Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "ACLQSTMP21.INX" 
+*INDEX ON HIREDATE D TO "ACLQSTMP21"
+^INDEX    ACLQSTMP22                                                          Ch9_Case4_Eastland_Payroll_Trans_mtp180000                        "" "ACLQSTMP22.INX" 
+*INDEX ON EMPNO D TO "ACLQSTMP22"
+^INDEX    ACLQSTMP25                                                          Ch9_Case4_Eastland_Payroll_Trans_mtp180000                        "" "ACLQSTMP25.INX" 
+*INDEX ON PAY_DATE D TO "ACLQSTMP25"
+^INDEX    Eastland_Payroll_Master_mtp180000_on_Department                     Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "Eastland_Payroll_Master_mtp180000_on_Department.INX" 
+*INDEX ON Department TO "Eastland_Payroll_Master_mtp180000_on_Department"
+^INDEX    Eastland_Payroll_Master_mtp180000_on_EmpNo                          Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "Eastland_Payroll_Master_mtp180000_on_EmpNo.INX" 
+*INDEX ON EMPNO TO "EASTLAND_PAYROLL_MASTER_MTP180000_ON_EMPNO"
+^INDEX    ACLQSTMP39                                                          Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "ACLQSTMP39.INX" 
+*INDEX ON EMPNO TO "ACLQSTMP39"
+^REPORT   Default_View                                                        Ch9_Case4_Eastland_Payroll_Master_mtp180000                       D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+EmpNo                WIDTH 8 PICTURE ""
+[LINE] 1
+Last_Name            WIDTH 11 PICTURE ""
+[LINE] 1
+First_Name           WIDTH 11 PICTURE ""
+[LINE] 1
+Salary               WIDTH 7 PICTURE ""
+[LINE] 1
+WH__                 WIDTH 7 PICTURE ""
+[LINE] 1
+Bonus__              WIDTH 9 PICTURE ""
+[LINE] 1
+Department           WIDTH 11 PICTURE ""
+[LINE] 1
+HireDate             WIDTH 11 PICTURE ""
+^FORMAT   Ch9_Case4_Eastland_Payroll_Trans_mtp180000                          Ch9_Case4_Eastland_Payroll_Trans_mtp180000                        "" "Eastland_Payroll_Trans_mtp180000.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+[LASTVIEW] "Default_View"
+[RETRIEVE] 0
+[REFRESH] EXCEL "C:\Users\mtp180000\Documents\ACL Data\Eastland_Payroll_Trans_mtp180000.fil" FROM "C:\Users\mtp180000\Documents\ACL Data\Source Files_SU19\Eastland_Payroll_Trans_SU19.xlsx" TABLE "Payroll Trans$" KEEPTITLE FIELD "EmpNo" C WID 6 AS "" FIELD "Check_No" N WID 5 DEC 0 AS "" FIELD "Pay_Date" D WID 19 PIC "YYYY-MM-DD" AS "" FIELD "Gross_Pay" N WID 8 DEC 2 AS "" FIELD "WH" N WID 8 DEC 2 AS "" FIELD "Net_Pay" N WID 8 DEC 2 AS "" FIELD "S_or_B" C WID 6 AS "" FIELD "Dept" N WID 1 DEC 0 AS "" FIELD "F9" C WID 10 AS ""
+[FILTER] (EmpNo = "200347") OR (EmpNo = "200348") OR (EmpNo = "200342")
+[FILTER] EmpNo = "800304"
+^REPORT   Default_View                                                        Emp_Join_mtp180000                                                D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+EmpNo                WIDTH 8 PICTURE ""
+[LINE] 1
+Salary               WIDTH 7 PICTURE ""
+[LINE] 1
+WH__                 WIDTH 7 PICTURE ""
+[LINE] 1
+Bonus__              WIDTH 9 PICTURE ""
+[LINE] 1
+Gross_Pay            WIDTH 10 PICTURE ""
+[LINE] 1
+Net_Pay              WIDTH 9 PICTURE ""
+^FORMAT   Emp_Join_mtp180000                                                  Emp_Join_mtp180000                                                "" "Emp_Join_mtp180000.FIL" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+~.07/02/2019   19:34:06 Ch9_Case4_Eastland_Payroll_Master_mtp180000 OPEN Ch9_Case4_Eastland_Payroll_Trans_mtp180000 SECONDARY
+~.07/02/2019   19:34:06 Ch9_Case4_Eastland_Payroll_Master_mtp180000 JOIN PKEY EmpNo FIELDS EmpNo Salary WH__ Bonus__ SKEY EmpNo WITH Gross_Pay Net_Pay TO "Emp_Join_mtp180000" OPEN PRESORT SECSORT
+~Input : Records:200         Control Total:0                    
+~Output: Records:200         Control Total:0                    
+[LASTVIEW] "Default_View"
+^INDEX    ACLQSTMP13                                                          Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "ACLQSTMP13.INX" 
+*INDEX ON HIREDATE D TO "ACLQSTMP13"
+^FORMAT   Ch9_Case4_Eastland_Payroll_Master_mtp180000                         Ch9_Case4_Eastland_Payroll_Master_mtp180000                       "" "Eastland_Payroll_Master_mtp180000.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 0
+[LASTVIEW] "Default_View"
+[RETRIEVE] 0
+[REFRESH] EXCEL "C:\Users\mtp180000\Documents\ACL Data\Eastland_Payroll_Master_mtp180000.fil" FROM "C:\Users\mtp180000\Documents\ACL Data\Source Files_SU19\Eastland_Payroll_Master_SU19.xlsx" TABLE "TOT Payroll-Master$" KEEPTITLE FIELD "EmpNo" C WID 6 AS "" FIELD "Last_Name" C WID 15 AS "" FIELD "First_Name" C WID 13 AS "" FIELD "Salary" N WID 6 DEC 0 AS "" FIELD "WH__" N WID 4 DEC 2 AS "" FIELD "Bonus__" N WID 4 DEC 2 AS "" FIELD "Department" N WID 1 DEC 0 AS "" FIELD "HireDate" D WID 19 PIC "YYYY-MM-DD" AS ""
+[FILTER] (EmpNo = "200347") OR (EmpNo = "200348") OR (EmpNo = "200342")
+[FILTER] (HireDate = `20181201`) OR (HireDate = `20181101`)
+[FILTER] Salary < 40000
+[FILTER] Salary < 40000 AND Bonus__ > 0
+[FILTER] (HireDate = `20181201`) AND (HireDate = `20181101`)
+[FILTER] HireDate = `20181201`
+[FILTER] (HireDate = `20181101`) AND (HireDate = `20181201`)
+[FILTER] ((HireDate = `20181101`) AND (HireDate = `20181101`)) AND (HireDate = `20181101`)
+[FILTER] (HireDate = `20181101`) AND (HireDate = `20181101`)
+[FILTER] HireDate = `20181101`
+^INDEX    Ch9_Case4_Eastland_Payroll_Trans_mtp180000_on_EmpNo                 Ch9_Case4_Eastland_Payroll_Trans_mtp180000                        "" "Ch9_Case4_Eastland_Payroll_Trans_mtp180000_on_EmpNo.INX" 
+*INDEX ON EMPNO TO "CH9_CASE4_EASTLAND_PAYROLL_TRANS_MTP180000_ON_EMPNO"
+^REPORT   Default_View                                                        Ch9_Case4_Eastland_Payroll_Trans_mtp180000                        D.T,
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+EmpNo                WIDTH 8 PICTURE ""
+[LINE] 1
+Check_No             WIDTH 10 PICTURE ""
+[LINE] 1
+Pay_Date             WIDTH 11 PICTURE ""
+[LINE] 1
+Gross_Pay            WIDTH 10 PICTURE ""
+[LINE] 1
+WH                   PICTURE ""
+[LINE] 1
+Ch9_Case4_Eastland_Payroll_Master_mtp180000.Bonus__ PICTURE ""
+[LINE] 1
+Ch9_Case4_Eastland_Payroll_Master_mtp180000.Salary PICTURE ""
+[LINE] 1
+Recalc_Bon           PICTURE ""
+[LINE] 1
+Recalc_Salaries      WIDTH 15 PICTURE ""
+[LINE] 1
+Net_Pay              WIDTH 9 PICTURE ""
+[LINE] 1
+S_or_B               WIDTH 8 PICTURE ""
+[LINE] 1
+Dept                 WIDTH 7 PICTURE ""
+[LINE] 1
+F9                   WIDTH 5 PICTURE ""
+^LOGFILE  ACL_Project_mtp180000                                                                                                                                                                                                                                                "" "ACL_Project_mtp180000.LOG"
+[PARENT_FOLDER_ID] 0
+^OPEN a,T,ACL_Project_mtp180000;f,T,Ch9_Case4_Eastland_Payroll_Trans_mtp180000;
